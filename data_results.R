@@ -6,7 +6,7 @@ fetch <- function() {
                       pattern = "CirrusSearchUserTesting\\.log-201512",
                       full.names = TRUE)
   dates <- as.numeric(substr(files, 71, 78))
-  files <- files[dates %in% seq(20151212, 20151227, 1)]
+  files <- files[dates %in% seq(20151213, 20151220, 1)]
   
   results <- lapply(files, function(x) {
     file <- tempfile()
@@ -51,4 +51,10 @@ fetch <- function() {
 
 data <- fetch()
 
-readr::write_tsv(data, "~/AcceptLangTestData.tsv")
+data_api <- as.data.frame(subset(data, source == "api"))
+data_web <- as.data.frame(subset(data, source == "web"))
+save(list = c("data_api", "data_web"), file = "AcceptLangTest.RData")
+
+q(ask = "no")
+
+# scp stat2:/home/bearloga/AcceptLangTest.RData ./

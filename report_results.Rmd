@@ -1,0 +1,10 @@
+---
+title: "Language detection via Accept-Language"
+author: "Mikhail Popov, Erik Berhardson, Dan Garry"
+date: "January 4, 2016"
+output: pdf_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk(echo = FALSE, warning = FALSE, message = FALSE)
+```
