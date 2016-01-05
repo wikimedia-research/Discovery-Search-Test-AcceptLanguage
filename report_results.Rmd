@@ -1,6 +1,6 @@
 ---
 title: "Language detection via Accept-Language"
-author: "Mikhail Popov (Analysis and Reporting), Erik Berhardson (Engineering and Data Collection), Dan Garry (Management)"
+author: "Mikhail Popov (Analysis and Reporting), Erik Berhardson (Engineering and Data Collection), Dan Garry (Management), Oliver Keyes (Review)"
 date: "January 4, 2016"
 output: pdf_document
 ---
@@ -8,7 +8,7 @@ output: pdf_document
 ```{r setup, include = FALSE}
 options(digits = 4, scipen = 500)
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, eval = FALSE)
-load("AcceptLangTestRefined.RData")
+# load("AcceptLangTestRefined.RData")
 ```
 
 ```{r pkgs}
