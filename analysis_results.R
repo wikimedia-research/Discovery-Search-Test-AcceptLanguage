@@ -1,7 +1,8 @@
+source('utils.R')
 # source('refine_results.R')
-# source('utils.R')
 
 library(BCDA)
+library(purrr) # install.packages("purrr")
 
 web %>%
   group_by(accept_language) %>%
@@ -16,6 +17,4 @@ web %>%
   summarize(events = sum(events)) %>%
   xtabs(events ~ group + results, data = .) %>%
   # { .[-3, ] } %>% # exclude "AL + es-plugin when <3 results"
-  prop.table(margin = 1) %>%
-  { 100 * . } %>%
-  knitr::kable(digits = 2)
+  prop.table(margin = 1)

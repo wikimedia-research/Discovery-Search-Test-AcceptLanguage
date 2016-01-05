@@ -1,8 +1,6 @@
-load("AcceptLangTest.RData")
+source('utils.R')
 
-library(magrittr)
-library(tidyr)
-import::from(dplyr, select, mutate, rename, arrange, group_by, summarize, keep_where = filter)
+load("AcceptLangTest.RData")
 
 data_web %<>% keep_where(events < 7) # 99% of the data
 
@@ -26,4 +24,4 @@ api_heavy <- data_api %>%
 
 rm(data_web, data_api)
 
-
+save(list = c('api_heavy', 'api_light', 'web'), file = 'AcceptLangTestRefined.RData')

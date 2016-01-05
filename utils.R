@@ -1,4 +1,6 @@
 library(magrittr)
+library(tidyr)
+import::from(dplyr, select, mutate, rename, arrange, group_by, summarize, keep_where = filter)
 
 query_hive <- function(query){
   
